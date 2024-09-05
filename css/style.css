@@ -40,7 +40,22 @@ ul {
 
 .flex.row {
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 /* Layout */
+
+/* Slider */
+#slider .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Thumbnails */
+#thumbnails img {
+    width: calc(100% / 5);
+    filter: brightness(0.75);
+}
+
+#thumbnails img:hover {
+    cursor: pointer;
+    filter: brightness(1);
+}

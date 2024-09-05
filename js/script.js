@@ -37,13 +37,19 @@ const app = Vue.createApp({
         ]
     }),
     methods: {
-        prev() {
-            return this.currentSrc === 0 ? this.currentSrc = this.imgsList.length - 1 : this.currentSrc--;
-        },
-        next() {
-            return this.currentSrc === this.imgsList.length - 1 ? this.currentSrc = 0 : this.currentSrc++;
+        setCurrentSrc(newSrc) {
+            switch (newSrc) {
+                case "prev":
+                    return this.currentSrc === 0 ? this.currentSrc = this.imgsList.length - 1 : this.currentSrc--;
+                    break;
+                case "next":
+                    return this.currentSrc === this.imgsList.length - 1 ? this.currentSrc = 0 : this.currentSrc++;
+                    break;
+                default:
+                    return this.currentSrc = newSrc;
+            }
         }
     }
 });
 
-app.mount("#slider");
+app.mount("#app");
